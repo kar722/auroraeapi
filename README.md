@@ -1,11 +1,11 @@
 ## TBD [Spring Portfolio Starter](https://nighthawkcodingsociety.com/projectsearch/details/Spring%20Portfolio%20Starter)
 Runtime link: TBD https://jportfolio.nighthawkcodingsociety.com/
 
-## Team Members
+## Team Membersl
 | Member  | Role  | Fastpages  | Spring Portfolio  |
 |---|---|---|---|
 |Evan| Designer  | [Link](https://evanyang24.github.io/APCSA/)  | [Link]()  |
-|Karthik| Scrum Master   | [Link](https://github.com/kar722/fastpages/issues/4)  | [Ling]()  |
+|Karthik| Scrum Master   | [Link](https://github.com/kar722/fastpages/issues/4)  | [Link]()  |
 |Pranav| Technical Officer  | [Link](Fastpages)   |  [Link]() |
 |Sanjay| Github Admin / Deployment  | [Link](https://sanjayb06.github.io/tri1fastpages/)  | [Link]()   |
 
