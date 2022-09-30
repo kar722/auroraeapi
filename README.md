@@ -2,12 +2,12 @@
 Runtime link: TBD https://jportfolio.nighthawkcodingsociety.com/
 
 ## Team Members
-| Member  | Role  | Fastpages  |   |
+| Member  | Role  | Fastpages  | Spring Portfolio  |
 |---|---|---|---|
-|Evan| Designer  | [Link](https://evanyang24.github.io/APCSA/)  |   |
-|Karthik| Scrum Master   | [Link](https://github.com/kar722/fastpages/issues/4)  |   |
-|Pranav| Technical Officer  | [Link](Fastpages)   |   |
-|Sanjay| Github Admin / Deployment  | [Link](https://sanjayb06.github.io/tri1fastpages/)  |   |
+|Evan| Designer  | [Link](https://evanyang24.github.io/APCSA/)  | [Link]()  |
+|Karthik| Scrum Master   | [Link](https://github.com/kar722/fastpages/issues/4)  | [Ling]()  |
+|Pranav| Technical Officer  | [Link](Fastpages)   |  [Link]() |
+|Sanjay| Github Admin / Deployment  | [Link](https://sanjayb06.github.io/tri1fastpages/)  | [Link]()   |
 
 
 ## Visual thoughts
