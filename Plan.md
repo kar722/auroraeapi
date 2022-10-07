@@ -38,5 +38,5 @@ Pranav
 Sanjay
 - DevOPS
   - Responsible for introducing processes, tools, and methodologies to balance needs throughout the software development life cycle
-- Implementation of Live Stram Screen
+- Implementation of Live Stream Screen
 - Creating prediction models using Machine Learning Algorithms to engange users
