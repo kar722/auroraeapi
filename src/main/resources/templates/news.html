@@ -1,17 +1,172 @@
-<!-- This page is illustrative and contains ideas about HTML formatting -->
-<!DOCTYPE HTML>
-<!-- Signals to the Layout Dialect which layout should be used to decorate this View -->
-<html xmlns:layout="http://www.w3.org/1999/xhtml" xmlns:th="http://www.w3.org/1999/xhtml"
-      layout:decorate="~{layouts/base}" lang="en">
-
+<!DOCTYPE html>
+<html xmlns:layout="http://www.w3.org/1999/xhtml" xmlns:th="http://www.w3.org/1999/xhtml" lang="en">
 <head>
-    <title>New</title>
+  <meta charset="UTF-8">
+  <title>NFL Schedule Score Cards</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/5.0.0/normalize.min.css">
+<link rel='stylesheet' href='https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css'><link rel="stylesheet" href="./style.css">
+
 </head>
 
-<body>
-<th:block layout:fragment="body" th:remove="tag">
-    <p>New html page</p>
-</th:block>
-</body>
 
+<body>
+<!-- partial:index.partial.html -->
+<div class="container">
+  <div class="row">
+    <ul class="resultsMatches list-unstyled">
+      <li>
+        <div class="panel panel-primary">
+          <div class="panel-heading match-header">
+            <h3 class="panel-title text-uppercase white-color"> Week 5 <span class="pull-right">Thursday Oct 6, 2022</span></h3>
+          </div>
+          <div class="panel-body">
+            <div class=" col-xs-12 col-md-6 match-list">
+              <div class="col-xs-5 col-md-5 team-left team_992">
+                <div class="score col-xs-6 col-md-6">
+                  <div class="runs">12</div>
+                  <div class="runRate"></div>
+                  <div class="over">0 TDs</div>
+                </div>
+                <div class=" col-xs-6 col-md-6 img_992">
+                  <a href="#" class="winner"><img style="height: 100px; width: 100px"  src="https://a.espncdn.com/combiner/i?img=/i/teamlogos/nfl/500/ind.png" class="img-rounded" alt=""></a>
+                </div>
+              </div>
+              <div class="col-xs-2 col-md-2">
+                <div class="vs">vs</div>
+              </div>
+              <div class=" col-xs-5 col-md-5 team-right last team_992">
+                <div class=" col-xs-6 col-md-6 img_992">
+                  <a href="#" class="loser"><img style="height: 100px; width: 100px"  src="https://a.espncdn.com/combiner/i?img=/i/teamlogos/nfl/500/den.png" class="img-rounded" alt=""></a>
+                </div>
+                <div class="score col-xs-6 col-md-6">
+                  <div class="runs"> 9</div>
+                  <div class="runRate"></div>
+                  <div class="over">0 TDs</div>
+                </div>
+              </div>
+            </div>
+            <div class="col-xs-12 col-md-6 match-content">
+
+              <div class="col-xs-9 col-md-12">
+                <h3 class="summary">Colts won by 3</h3>
+                <div class="stadium">Empower Field at Mile High</div>
+              </div>
+
+              <div class="actions col-xs-3 col-md-12">
+                <a href="fullscorecard.html" class="btn btn-default violet-dash-bg hidden-767 hidden-480" title="Fullscorecard">
+                  <i class="fa fa-list-alt"></i> Full ScoreCard</a>
+                <a href="fullscorecard.html" class="btn btn-default violet-dash-bg visible-xs" title="Fullscorecard">
+                  <i class="fa fa-list-alt"></i></a>
+              </div>
+
+            </div>
+          </div>
+        </div>
+      </li>
+
+      <li>
+        <div class="panel panel-primary">
+          <div class="panel-heading match-header">
+            <h3 class="panel-title text-uppercase white-color"> Week 5 <span class="pull-right">Sunday October 9, 2022</span></h3>
+          </div>
+          <div class="panel-body">
+            <div class=" col-xs-12 col-md-6 match-list">
+              <div class="col-xs-5 col-md-5 team-left team_992">
+                <div class="score col-xs-6 col-md-6">
+                  <div class="runs">22</div>
+                  <div class="runRate"></div>
+                  <div class="over">1 TDs</div>
+                </div>
+                <div class=" col-xs-6 col-md-6 img_992">
+                  <a href="#" class="winner"><img style="height: 100px; width: 100px" src="https://a.espncdn.com/combiner/i?img=/i/teamlogos/nfl/500/dal.png" class="img-rounded" alt=""></a>
+                </div>
+              </div>
+              <div class="col-xs-2 col-md-2">
+                <div class="vs">vs</div>
+              </div>
+              <div class=" col-xs-5 col-md-5 team-right last team_992">
+                <div class=" col-xs-6 col-md-6 img_992">
+                  <a href="#" class="loser"><img style="height: 100px; width: 100px" src="https://a.espncdn.com/combiner/i?img=/i/teamlogos/nfl/500/lar.png" class="img-rounded" alt=""></a>
+                </div>
+                <div class="score col-xs-6 col-md-6">
+                  <div class="runs">10</div>
+                  <div class="runRate"></div>
+                  <div class="over">1 TDs</div>
+                </div>
+              </div>
+            </div>
+            <div class="col-xs-12 col-md-6 match-content">
+
+              <div class="col-xs-9 col-md-12">
+                <h3 class="summary">Cowboys won by 12</h3>
+                <div class="stadium">SoFi Stadium</div>
+              </div>
+
+              <div class="actions col-xs-3 col-md-12">
+                <a href="fullscorecard.html" class="btn btn-default violet-dash-bg hidden-767 hidden-480" title="Fullscorecard">
+                  <i class="fa fa-list-alt"></i> Full ScoreCard</a>
+                <a href="fullscorecard.html" class="btn btn-default violet-dash-bg visible-xs" title="Fullscorecard">
+                  <i class="fa fa-list-alt"></i></a>
+              </div>
+
+            </div>
+          </div>
+        </div>
+      </li>
+      <li>
+        <div class="panel panel-primary">
+          <div class="panel-heading match-header">
+            <h3 class="panel-title text-uppercase white-color"> Week 5 <span class="pull-right">Sunday October 9, 2022</span></h3>
+          </div>
+          <div class="panel-body">
+            <div class=" col-xs-12 col-md-6 match-list">
+              <div class="col-xs-5 col-md-5 team-left team_992">
+                <div class="score col-xs-6 col-md-6">
+                  <div class="runs">37</div>
+                  <div class="runRate"></div>
+                  <div class="over">4 TDs</div>
+                </div>
+                <div class=" col-xs-6 col-md-6 img_992">
+                  <a href="#" class="winner"><img style="height: 100px; width: 100px" src="https://a.espncdn.com/i/teamlogos/nfl/500/sf.png" class="img-rounded" alt=""></a>
+                </div>
+              </div>
+              <div class="col-xs-2 col-md-2">
+                <div class="vs">vs</div>
+              </div>
+              <div class=" col-xs-5 col-md-5 team-right last team_992">
+                <div class=" col-xs-6 col-md-6 img_992">
+                  <a href="#" class="loser"><img style="height: 100px; width: 100px" src="https://a.espncdn.com/i/teamlogos/nfl/500/car.png" class="img-rounded" alt=""></a>
+                </div>
+                <div class="score col-xs-6 col-md-6">
+                  <div class="runs"> 15</div>
+                  <div class="runRate"></div>
+                  <div class="over">1 TDs</div>
+                </div>
+              </div>
+            </div>
+            <div class="col-xs-12 col-md-6 match-content">
+
+              <div class="col-xs-9 col-md-12">
+                <h3 class="summary">49ers Won by 22 </h3>
+                <div class="stadium">Bank of America Stadium</div>
+              </div>
+
+              <div class="actions col-xs-3 col-md-12">
+                <a href="fullscorecard.html" class="btn btn-default violet-dash-bg hidden-767 hidden-480" title="Fullscorecard">
+                  <i class="fa fa-list-alt"></i> Full ScoreCard</a>
+                <a href="fullscorecard.html" class="btn btn-default violet-dash-bg visible-xs" title="Fullscorecard">
+                  <i class="fa fa-list-alt"></i></a>
+              </div>
+
+            </div>
+          </div>
+        </div>
+      </li>
+    </ul>
+  </div>
+</div>
+
+<!-- partial -->
+  <script src='//maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js'></script>
+</body>
 </html>
