@@ -24,7 +24,7 @@ public class NFLApiController {
 
     // GET Covid 19 Stats
     @GetMapping("/daily")   //added to end of prefix as endpoint
-    public ResponseEntity<JSONObject> getCovid() {
+    public ResponseEntity<JSONObject> getData() {
 
         //calls API once a day, sets body and status properties
         String today = new Date().toString().substring(0,10); 
