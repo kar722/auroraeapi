@@ -52,7 +52,8 @@ public class Greet {
 		} catch (InterruptedException e) {
 			e.printStackTrace();
 		}
-		System.out.println(response.body());
+
+        model.addAttribute("json", response.body());
         
         return "news";
 
