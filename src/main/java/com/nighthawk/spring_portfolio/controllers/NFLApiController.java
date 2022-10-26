@@ -28,7 +28,7 @@ public class NFLApiController {
 
         //calls API once a day, sets body and status properties
         String today = new Date().toString().substring(0,10); 
-        if (last_run == null || !today.equals(last_run))
+        if (true)
         {
             try {  //APIs can fail (ie Internet or Service down)
                 
