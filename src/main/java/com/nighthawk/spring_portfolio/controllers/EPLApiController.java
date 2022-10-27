@@ -16,8 +16,8 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 @RestController // annotation to create a RESTful web services
-@RequestMapping("/api/nfl")  //prefix of API
-public class NFLApiController {
+@RequestMapping("/api/epl")  //prefix of API
+public class EPLApiController {
     private JSONObject body; //last run result
     private HttpStatus status; //last run status
     String last_run = null; //last run day of month
@@ -34,7 +34,7 @@ public class NFLApiController {
                 
                 //RapidAPI header
                 HttpRequest request = HttpRequest.newBuilder()
-                    .uri(URI.create("https://opentdb.com/api.php?amount=10&category=21&difficulty=medium&type=multiple"))
+                    .uri(URI.create("https://www.thesportsdb.com/api/v1/json/2/search_all_teams.php?l=English%20Premier%20League"))
                     // .header("X-RapidAPI-Key", "9fb1283360mshedc514375b603d6p156a26jsna7cd4ca5744a")
                     // .header("X-RapidAPI-Host", "nfl-schedule.p.rapidapi.com")
                     .method("GET", HttpRequest.BodyPublishers.noBody())
