@@ -28,13 +28,13 @@ public class NFLApiController {
 
         //calls API once a day, sets body and status properties
         String today = new Date().toString().substring(0,10); 
-        if (last_run == null || !today.equals(last_run))
+        if (true)
         {
             try {  //APIs can fail (ie Internet or Service down)
                 
                 //RapidAPI header
                 HttpRequest request = HttpRequest.newBuilder()
-                    .uri(URI.create("https://opentdb.com/api.php?amount=10&category=21&difficulty=medium&type=multiple"))
+                    .uri(URI.create("https://opentdb.com/api.php?amount=1&category=21&difficulty=medium&type=multiple"))
                     // .header("X-RapidAPI-Key", "9fb1283360mshedc514375b603d6p156a26jsna7cd4ca5744a")
                     // .header("X-RapidAPI-Host", "nfl-schedule.p.rapidapi.com")
                     .method("GET", HttpRequest.BodyPublishers.noBody())
@@ -68,4 +68,3 @@ public class NFLApiController {
     }
 
 }
-
