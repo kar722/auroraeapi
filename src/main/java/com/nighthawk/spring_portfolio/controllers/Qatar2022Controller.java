@@ -48,7 +48,7 @@ public class Qatar2022Controller {
                     {"Argentina,7"},  
                     {"Saudi Arabia,4"},
                     {"Mexico,6"},
-                    {"Poland,6"}
+                    {"Poland,6"},
                     {"A,Qatar,1"},
                     {"A,Ecuador,3"},
                     {"A,Senegal,5"},
