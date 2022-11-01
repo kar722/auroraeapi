@@ -37,18 +37,37 @@ public class Qatar2022Controller {
                 
 
                 final String[][] wcmatches = {
-                    {"Qatar,2"},
-                    {"Ecuador,4"},
+                    {"Qatar,1"},
+                    {"Ecuador,3"},
                     {"Senegal,5"},
-                    {"Netherlands, 7"},
-                    {"England,7"},
-                    {"Iran,4"},
-                    {"US,5"},
-                    {"Wales,7"},
-                    {"Argentina,7"},
-                    {"Saudi Arabia,4"},
+                    {"Netherlands, 8"},
+                    {"England,9"},
+                    {"Iran,6"},
+                    {"US,6"},
+                    {"Wales,5"},
+                    {"Argentina,9"},
+                    {"Saudi Arabia,2"},
                     {"Mexico,6"},
-                    {"Poland,6"}
+                    {"France,10"},
+                    {"Australia,4"},
+                    {"Denmark,6"},
+                    {"Tunisia,2"},
+                    {"Spain,8"},
+                    {"Costa Rica,4"},
+                    {"Germany,9"},
+                    {"Japan,6"},
+                    {"Belgium,9"},
+                    {"Canada,5"},
+                    {"Morocco,5"},
+                    {"Croatia,7"},
+                    {"Brazil,10"},
+                    {"Serbia,3"},
+                    {"Switzerland,5"},
+                    {"Cameroon,4"},
+                    {"Portugal,8"},
+                    {"Ghana,5"},
+                    {"Uruguay,6"},
+                    {"South Korea,5"}
                 };
                 // Gson gson = new Gson();
                 // String matches = gson.toJson(wcmatches);
