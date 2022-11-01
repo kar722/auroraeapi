@@ -7,6 +7,7 @@ import java.net.http.HttpResponse;
 import java.util.Date;
 import java.util.HashMap;
 
+import org.json.simple.JSONArray;
 import org.json.simple.JSONObject;
 import org.json.simple.parser.JSONParser;
 import org.springframework.http.HttpStatus;
@@ -54,6 +55,21 @@ public class Qatar2022Controller {
                 // Gson gson = new GsonBuilder().create();
                 // gson.toJson(wcmatches);
                 // this.body = (JSONObject) new JSONParser().parse(wcmatches);
+                this.body = new JSONObject();
+
+                JSONArray jsonArray = new JSONArray();
+                for (String[] ca : wcmatches) {
+                    JSONArray arr = new JSONArray();
+                    for (String c : ca) {
+                        arr.add((c)); // or some other conversion
+                    }
+                    jsonArray.add(arr);
+                }
+
+                this.body.put("matches", jsonArray);
+                
+
+
 
                 //RapidAPI header
                 // HttpRequest request = HttpRequest.newBuilder()
@@ -85,7 +101,7 @@ public class Qatar2022Controller {
         }
 
         //return JSONObject in RESTful style
-        return new ResponseEntity<>(body, status);
+        return new ResponseEntity<>(body, HttpStatus.OK);
 
         
     }
