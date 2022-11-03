@@ -61,4 +61,19 @@ public class JokesApiController {
         // Bad ID
         return new ResponseEntity<>(HttpStatus.BAD_REQUEST);
     }
+
+    /* Update Draw
+     */
+    @PutMapping("/draw/{id}")
+    public ResponseEntity<Jokes> setDraw(@PathVariable long id) {
+        Optional<Jokes> optional = repository.findById(id);
+        if (optional.isPresent()) {  // Good ID
+            Jokes joke = optional.get();
+            joke.setDraw(joke.getDraw()+1);
+            repository.save(joke);
+            return new ResponseEntity<>(joke, HttpStatus.OK);
+        }
+        // Bad ID
+        return new ResponseEntity<>(HttpStatus.BAD_REQUEST);
+    }
 }
