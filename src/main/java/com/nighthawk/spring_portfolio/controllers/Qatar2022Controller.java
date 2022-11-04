@@ -37,18 +37,6 @@ public class Qatar2022Controller {
                 
 
                 final String[][] wcmatches = {
-                    {"Qatar,2"},
-                    {"Ecuador,4"},
-                    {"Senegal,5"},
-                    {"Netherlands, 7"},
-                    {"England,7"},
-                    {"Iran,4"},
-                    {"US,5"},
-                    {"Wales,7"},
-                    {"Argentina,7"},  
-                    {"Saudi Arabia,4"},
-                    {"Mexico,6"},
-                    {"Poland,6"},
                     {"A,Qatar,1"},
                     {"A,Ecuador,3"},
                     {"A,Senegal,5"},
