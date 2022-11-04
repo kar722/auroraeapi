@@ -6,7 +6,7 @@ Runtime link: TBD https://jportfolio.nighthawkcodingsociety.com/
 |---|---|---|---|
 |Evan| Designer  | [Link](https://evanyang24.github.io/APCSA/)  | [Link]()  |
 |Karthik| Scrum Master   | [Link](https://github.com/kar722/fastpages/issues/4)  | [Link]()  |
-|Pranav| Technical Officer  | [Link](Fastpages)   |  [Link]() |
+|Pranav| Technical Officer  | [Link](Fastpages)   |  [Link](https://github.com/PranavP04) |
 |Sanjay| Github Admin / Deployment  | [Link](https://sanjayb06.github.io/tri1fastpages/)  | [Link]()   |
 
 
