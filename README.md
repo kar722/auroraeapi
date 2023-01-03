@@ -1,7 +1,7 @@
 ## TBD [Spring Portfolio Starter](https://nighthawkcodingsociety.com/projectsearch/details/Spring%20Portfolio%20Starter)
 Runtime link: TBD https://jportfolio.nighthawkcodingsociety.com/
 
-## Team Membersl
+## Team Members
 | Member  | Role  | Fastpages  | Spring Portfolio  |
 |---|---|---|---|
 |Evan| Designer  | [Link](https://evanyang24.github.io/APCSA/)  | [Link]()  |
