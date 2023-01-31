@@ -69,11 +69,7 @@ public class Qatar2022Controller {
                     {"H,Uruguay,6"},
                     {"H,South Korea,5"}
                 };
-                // Gson gson = new Gson();
-                // String matches = gson.toJson(wcmatches);
-                // Gson gson = new GsonBuilder().create();
-                // gson.toJson(wcmatches);
-                // this.body = (JSONObject) new JSONParser().parse(wcmatches);
+
                 this.body = new JSONObject();
 
                 JSONArray jsonArray = new JSONArray();
@@ -87,25 +83,6 @@ public class Qatar2022Controller {
 
                 this.body.put("matches", jsonArray);
                 
-
-
-
-                //RapidAPI header
-                // HttpRequest request = HttpRequest.newBuilder()
-                //     .uri(URI.create("https://opentdb.com/api.php?amount=1&category=21&difficulty=medium&type=multiple"))
-                //     // .header("X-RapidAPI-Key", "9fb1283360mshedc514375b603d6p156a26jsna7cd4ca5744a")
-                //     // .header("X-RapidAPI-Host", "nfl-schedule.p.rapidapi.com")
-                //     .method("GET", HttpRequest.BodyPublishers.noBody())
-                //     .build();
-
-                // //RapidAPI request and response
-                // HttpResponse<String> response = HttpClient.newHttpClient().send(request, HttpResponse.BodyHandlers.ofString());
-
-                // //JSONParser extracts text body and parses to JSONObject
-                // this.body = (JSONObject) new JSONParser().parse(response.body());
-                // this.status = HttpStatus.OK;  //200 success
-                // this.last_run = today;
-                // System.out.println(response.body());
 
             }
             catch (Exception e) {  //capture failure info
