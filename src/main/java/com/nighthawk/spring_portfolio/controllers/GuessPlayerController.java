@@ -32,7 +32,7 @@ public class GuessPlayerController {
         if (true)
         {
             try {  //APIs can fail (ie Internet or Service down)
-                int player_id = (int)Math.floor(Math.random() * (30 - 1 + 1) + 1);
+                int player_id = (int)Math.floor(Math.random() * (500 - 1 + 1) + 1);
                 //RapidAPI header
                 HttpRequest request = HttpRequest.newBuilder()
                     .uri(URI.create("https://futdb.app/api/players/"+player_id))
