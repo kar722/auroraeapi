@@ -20,13 +20,13 @@ import org.springframework.web.bind.annotation.RestController;
 
 @RestController // annotation to create a RESTful web services
 @RequestMapping("/api/nfl")  //prefix of API
-public class Qatar2022Controller {
+public class WomensWCController {
     private JSONObject body; //last run result
     private HttpStatus status; //last run status
     String last_run = null; //last run day of month
 
     // GET Covid 19 Stats
-    @GetMapping("/qatar")   //added to end of prefix as endpoint
+    @GetMapping("/women")   //added to end of prefix as endpoint
     public ResponseEntity<JSONObject> getData() {
 
         //calls API once a day, sets body and status properties
@@ -37,36 +37,34 @@ public class Qatar2022Controller {
                 
 
                 final String[][] wcmatches = {
-                    {"A,Qatar,1"},
-                    {"A,Ecuador,3"},
-                    {"A,Senegal,5"},
-                    {"A,Netherlands, 8"},
-                    {"B,England,9"},
-                    {"B,Iran,6"},
-                    {"B,US,6"},
-                    {"B,Wales,5"},
-                    {"C,Argentina,9"},
-                    {"C,Saudi Arabia,2"},
-                    {"C,Mexico,6"},
-                    {"D,France,10"},
-                    {"D,Australia,4"},
-                    {"D,Denmark,6"},
-                    {"D,Tunisia,2"},
-                    {"E,Spain,8"},
-                    {"E,Costa Rica,4"},
-                    {"E,Germany,9"},
-                    {"E,Japan,6"},
-                    {"F,Belgium,9"},
-                    {"F,Canada,5"},
-                    {"F,Morocco,5"},
-                    {"F,Croatia,7"},
-                    {"G,Brazil,10"},
-                    {"G,Serbia,3"},
-                    {"G,Switzerland,5"},
-                    {"G,Cameroon,4"},
-                    {"H,Portugal,8"},
-                    {"H,Ghana,5"},
-                    {"H,Uruguay,6"},
+                    {"A,New Zealand,1"},
+                    {"A,Norway,3"},
+                    {"A,Switzerland,5"},
+                    {"A,Philippines, 8"},
+                    {"B,Canada,9"},
+                    {"B,Nigeria,6"},
+                    {"B,Australia,6"},
+                    {"B,Ireland,5"},
+                    {"C,Japan,9"},
+                    {"C,Costa Rica,2"},
+                    {"C,Spain,6"},
+                    {"D,Zambia,10"},
+                    {"D,England,4"},
+                    {"D,China,6"},
+                    {"D,Denmark,2"},
+                    {"E,US,8"},
+                    {"E,Netherlands,4"},
+                    {"E,Vietnam,9"},
+                    {"F,France,9"},
+                    {"F,Jamaica,5"},
+                    {"F,Brazil,5"},
+                    {"G,Sweden,10"},
+                    {"G,South Africa,3"},
+                    {"G,Italy,5"},
+                    {"G,Argentina,4"},
+                    {"H,Germany,8"},
+                    {"H,Columbia,5"},
+                    {"H,Morocco,6"},
                     {"H,South Korea,5"}
                 };
 
