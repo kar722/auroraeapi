@@ -34,7 +34,7 @@ public class EPLApiController {
                 
                 //RapidAPI header
                 HttpRequest request = HttpRequest.newBuilder()
-                    .uri(URI.create("https://www.thesportsdb.com/api/v1/json/2/search_all_teams.php?l=English%20Premier%20League"))
+                    .uri(URI.create("https://www.thesportsdb.com/api/v1/json/3/search_all_teams.php?l=English%20Premier%20League"))
                     // .header("X-RapidAPI-Key", "9fb1283360mshedc514375b603d6p156a26jsna7cd4ca5744a")
                     // .header("X-RapidAPI-Host", "nfl-schedule.p.rapidapi.com")
                     .method("GET", HttpRequest.BodyPublishers.noBody())
