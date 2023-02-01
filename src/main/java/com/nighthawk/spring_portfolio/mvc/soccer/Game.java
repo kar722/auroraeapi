@@ -1,4 +1,4 @@
-package com.nighthawk.spring_portfolio.mvc.nba;
+package com.nighthawk.spring_portfolio.mvc.soccer;
 
 import java.time.LocalDate;
 
