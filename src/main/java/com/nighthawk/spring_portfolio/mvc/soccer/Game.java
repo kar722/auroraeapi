@@ -52,3 +52,57 @@ public class Game {
 
 
 }
+
+
+/*
+ Phase 1:
+
+(Display game results for today of NBA, e.g.)
+
+1/24/2023
+GS Warriors 110, Heat 98
+Lakers 102, Jazz 97
+
+===============
+
+Phase 2:
+Choose 1 from the following:
+1. NBA
+2. NFL
+3. MLB
+
+(User enters 1, 2 or 3)
+
+(Display game results for today of selected league, e.g.)
+
+GS Warriors 110, Heat 98
+Lakers 102, Jazz 97
+
+
+=======================
+Model classes
+Game
+String team1Name
+String team2Name
+Date gameDate
+int team1Score
+int team2Score
+getTeam1Name()
+getTeam2Name()
+get....
+
+ApiHelper
+String apiKey
+String baseUrl
+List<Game> getGameData()
+
+View classes
+TerminalView
+displayGameResults(List<Game> games)
+
+Controller classes
+Controller
+main() - calls ApiHelper.getGameData() and TerminalView.displayGameResults()
+
+
+ */
