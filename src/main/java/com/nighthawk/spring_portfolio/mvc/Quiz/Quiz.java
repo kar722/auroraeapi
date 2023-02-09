@@ -2,6 +2,12 @@ package com.nighthawk.spring_portfolio.mvc.Quiz;
 
 import java.sql.*;
 
+import java.util.*;
+import java.util.stream.Collectors;
+import java.util.stream.IntStream;
+
+import org.json.simple.JSONArray;
+import org.json.simple.JSONObject;
 public class Quiz {
 
     public void insert(String user, int attempts, String player) {
@@ -41,7 +47,7 @@ public class Quiz {
         System.out.println("Records created successfully");
   
     }
-    public void get_data() {
+    public JSONArray get_data() {
         Connection c = null;
         Statement stmt = null;
         try {
@@ -53,30 +59,60 @@ public class Quiz {
            stmt = c.createStatement();
            ResultSet rs = stmt.executeQuery( "SELECT * FROM QUIZ;" );
            
-           while ( rs.next() ) {
-              int id = rs.getInt("id");
-              String  name = rs.getString("user");
-              int age  = rs.getInt("attempts");
-              String  address = rs.getString("player");
+        //    while ( rs.next() ) {
+        //       int id = rs.getInt("id");
+        //       String  name = rs.getString("user");
+        //       int age  = rs.getInt("attempts");
+        //       String  address = rs.getString("player");
               
-              System.out.println( "ID = " + id );
-              System.out.println( "NAME = " + name );
-              System.out.println( "ADDRESS = " + address );
-              System.out.println();
-           }
+        //       System.out.println( "ID = " + id );
+        //       System.out.println( "NAME = " + name );
+        //       System.out.println( "ADDRESS = " + address );
+        //       System.out.println();
+        //    }
+
+        ResultSetMetaData md = rs.getMetaData();
+        int numCols = md.getColumnCount();
+        List<String> colNames = IntStream.range(0, numCols)
+        .mapToObj(i -> {
+            try {
+                return md.getColumnName(i + 1);
+            } catch (SQLException e) {
+                e.printStackTrace();
+                return "?";
+            }
+        })
+        .collect(Collectors.toList());
+
+        JSONArray result = new JSONArray();
+        while (rs.next()) {
+            JSONObject row = new JSONObject();
+            colNames.forEach(cn -> {
+                try {
+                    row.put(cn, rs.getObject(cn));
+                } catch (Exception e) {
+                    ((Throwable) e).printStackTrace();
+                }
+            });
+            result.add(row);
+            // return result;
+        }
+
            rs.close();
            stmt.close();
            c.close();
+        return result;
         } catch ( Exception e ) {
            System.err.println( e.getClass().getName() + ": " + e.getMessage() );
            System.exit(0);
         }
-        System.out.println("Operation done successfully");
+        JSONArray result = new JSONArray();
+        return result;
      
     }
    public static void main( String args[] ) {
         Quiz quiz = new Quiz();
-        quiz.get_data();
+        System.out.println(quiz.get_data());
    }
 }
 
