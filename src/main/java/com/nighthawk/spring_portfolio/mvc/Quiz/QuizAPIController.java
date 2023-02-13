@@ -1,4 +1,5 @@
-package com.nighthawk.spring_portfolio.controllers;
+package com.nighthawk.spring_portfolio.mvc.Quiz;
+
 
 import java.net.URI;
 import java.net.http.HttpClient;
@@ -22,10 +23,11 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
 @RestController // annotation to create a RESTful web services
-@RequestMapping("/api/nfl")  //prefix of API
-public class GuessPlayerController {
+@RequestMapping("/api/quiz")  //prefix of API
+public class QuizAPIController {
     private JSONObject body; //last run result
     private HttpStatus status; //last run status
+    private Quiz quiz;
     String last_run = null; //last run day of month
 
     // GET Covid 19 Stats
@@ -127,6 +129,16 @@ public class GuessPlayerController {
         }
         return new ResponseEntity<>(body, HttpStatus.OK);
 
+    }
+
+    @PostMapping("/add/{user}/{attempts}/{player}")
+    public ResponseEntity<JSONObject> Add(@PathVariable String user,@PathVariable int attempts, @PathVariable String player) throws Exception {
+        Quiz quizz = new Quiz();
+        quizz.insert(user,attempts,player);
+        JSONArray result = quizz.get_data();
+        this.body = new JSONObject();
+        this.body.put("data", result);
+        return new ResponseEntity<>(body,HttpStatus.OK);
     }
 
 }
