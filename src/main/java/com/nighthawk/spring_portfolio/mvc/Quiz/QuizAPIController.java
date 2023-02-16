@@ -140,5 +140,14 @@ public class QuizAPIController {
         this.body.put("data", result);
         return new ResponseEntity<>(body,HttpStatus.OK);
     }
+    
+    @GetMapping("/getresults")
+    public ResponseEntity<JSONObject> getresults() {
+        Quiz quizz = new Quiz();
+        JSONArray result = quizz.get_data();
+        this.body = new JSONObject();
+        this.body.put("data", result);
+        return new ResponseEntity<>(body,HttpStatus.OK);
+    }
 
 }
