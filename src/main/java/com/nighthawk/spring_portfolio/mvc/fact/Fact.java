@@ -60,16 +60,13 @@ public class Fact {
     // @NonNull, etc placed in params of constructor: "@NonNull @Size(min = 2, max = 30, message = "Name (2 to 30 chars)") String name"
     @NonNull
     @Size(min = 2, max = 30, message = "Name (2 to 30 chars)")
-    private String name;
-
-    @DateTimeFormat(pattern = "yyyy-MM-dd")
-    private Date dob;
+    private String playerName;
     
     @Column(unique=false)
-    private int age;
+    private String playerTeam;
 
     @Column(unique=false)
-    private String nationality;
+    private String playerFact;
 
     /* HashMap is used to store JSON for daily "stats"
     "stats": {
@@ -85,36 +82,23 @@ public class Fact {
 
 
     // Constructor used when building object from an API
-    public Fact(String email, String password, String name, Date dob, int age, String nationality) {
+    public Fact(String email, String password, String playerName, String playerTeam, String playerFact) {
         this.email = email;
         this.password = password;
-        this.name = name;
-        this.dob = dob;
-        this.age = age;
-        this.nationality = nationality;
+        this.playerName = playerName;
+        this.playerTeam = playerTeam;
+        this.playerFact = playerFact;
     }
     public String toString(){
-        return ("{ \"email\": " + this.email + ", " + "\"password\": " + this.password + ", " + "\"name\": " + this.name + ", " + "\"dob\": " + this.dob + ", \"age\": " + this.age + ", \"nationality\": " + this.nationality + " }" );
+        return ("{ \"email\": " + this.email + ", " + "\"password\": " + this.password + ", " + "\"player's name\": " + this.playerName + ", " + ", \"player's team\": " + this.playerTeam + ", \"Fact about player\": " + this.playerFact + " }" );
     }
 
-    // A custom getter to return age from dob attribute
-    public int getAge() {
-        if (this.dob != null) {
-            LocalDate birthDay = this.dob.toInstant().atZone(ZoneId.systemDefault()).toLocalDate();
-            return Period.between(birthDay, LocalDate.now()).getYears(); }
-        return -1;
+    public String getPlayerFact(){
+        return playerFact;
     }
 
-    public String getAgeToString(){
-        return ("{ \"name\": " + this.name + " ," + "\"age\": " + this.getAge() + " }" );
-    }
-
-    public String getNationality(){
-        return nationality;
-    }
-
-    public String getNationalityToString(){
-        return ("{ \"name\": " + this.name + " ," + "\"nationality\": " + this.getNationality() + " }" );
+    public String getPlayerFactToString(){
+        return ("{ \"player's name\": " + this.playerName + " ," + "\"Fact about player\": " + this.getPlayerFact() + " }" );
     }
 
     public static void main(String[] args) {
@@ -122,9 +106,7 @@ public class Fact {
         Fact p1 = new Fact();
 
         // using gregorian calendar to initialize tester date object
-        Date dob2 = new GregorianCalendar(2006, 6, 22).getTime();
-        Fact p2 = new Fact("karthikv722@gmail.com", "karthikishim", "Karthik Valluri", dob2, 16, "United States");
-        
+        Fact p2 = new Fact("karthikv722@gmail.com", "karthikishim", "Mykhailo Mudryk", "Chelsea F.C.", "Mudryk has 88 pac on his base FIFA 23 card");
         
         System.out.println(p1);
         System.out.println(p2);
