@@ -17,7 +17,7 @@ public interface FactJpaRepository extends JpaRepository<Fact, Long> {
     List<Fact> findAllByOrderByNameAsc();
 
     // JPA query, findBy does JPA magic with "Name", "Containing", "Or", "Email", "IgnoreCase"
-    List<Fact> findByNameContainingIgnoreCaseOrEmailContainingIgnoreCase(String playerName, String email);
+    List<Fact> findByNameContainingIgnoreCaseOrEmailContainingIgnoreCase(String name, String email);
     /* Custom JPA query articles, there are articles that show custom SQL as well
        https://springframework.guru/spring-data-jpa-query/
        https://docs.spring.io/spring-data/jpa/docs/current/reference/html/#jpa.query-methods
@@ -25,7 +25,7 @@ public interface FactJpaRepository extends JpaRepository<Fact, Long> {
 
     // Custom JPA query
     @Query(
-            value = "SELECT * FROM Fact f WHERE f.playerName LIKE ?1 or f.email LIKE ?1",
+            value = "SELECT * FROM Fact f WHERE f.name LIKE ?1 or f.email LIKE ?1",
             nativeQuery = true)
     List<Fact> findByLikeTermNative(String term);
     /*

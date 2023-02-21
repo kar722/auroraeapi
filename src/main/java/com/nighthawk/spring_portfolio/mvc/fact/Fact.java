@@ -29,7 +29,7 @@ import lombok.NoArgsConstructor;
 import lombok.NonNull;
 
 /*
-fact is a POJO, Plain Old Java Object.
+Person is a POJO, Plain Old Java Object.
 First set of annotations add functionality to POJO
 --- @Setter @Getter @ToString @NoArgsConstructor @RequiredArgsConstructor
 The last annotation connect to database
@@ -42,12 +42,12 @@ The last annotation connect to database
 @TypeDef(name="json", typeClass = JsonType.class)
 public class Fact {
     
-    // automatic unique identifier for fact record
+    // automatic unique identifier for Person record
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     private Long id;
 
-    // email, password, roles are key attributes to login and authentication
+    // email, playerFact, roles are key attributes to login and authentication
     @NotEmpty
     @Size(min=5)
     @Column(unique=true)
@@ -55,18 +55,21 @@ public class Fact {
     private String email;
 
     @NotEmpty
-    private String password;
+    private String playerFact;
 
     // @NonNull, etc placed in params of constructor: "@NonNull @Size(min = 2, max = 30, message = "Name (2 to 30 chars)") String name"
     @NonNull
     @Size(min = 2, max = 30, message = "Name (2 to 30 chars)")
-    private String playerName;
+    private String name;
+
+    @DateTimeFormat(pattern = "yyyy-MM-dd")
+    private Date dob;
     
     @Column(unique=false)
-    private String playerTeam;
+    private int teamsPlayedFor;
 
     @Column(unique=false)
-    private String playerFact;
+    private String nationality;
 
     /* HashMap is used to store JSON for daily "stats"
     "stats": {
@@ -82,15 +85,36 @@ public class Fact {
 
 
     // Constructor used when building object from an API
-    public Fact(String email, String password, String playerName, String playerTeam, String playerFact) {
+    public Fact(String email, String playerFact, String name, Date dob, int teamsPlayedFor, String nationality) {
         this.email = email;
-        this.password = password;
-        this.playerName = playerName;
-        this.playerTeam = playerTeam;
         this.playerFact = playerFact;
+        this.name = name;
+        this.dob = dob;
+        this.teamsPlayedFor = teamsPlayedFor;
+        this.nationality = nationality;
     }
     public String toString(){
-        return ("{ \"email\": " + this.email + ", " + "\"password\": " + this.password + ", " + "\"player's name\": " + this.playerName + ", " + ", \"player's team\": " + this.playerTeam + ", \"Fact about player\": " + this.playerFact + " }" );
+        return ("{ \"email\": " + this.email + ", " + "\"playerFact\": " + this.playerFact + ", " + "\"name\": " + this.name + ", " + "\"dob\": " + this.dob + ", \"teamsplayedfor\": " + this.teamsPlayedFor + ", \"nationality\": " + this.nationality + " }" );
+    }
+
+    // A custom getter to return age from dob attribute
+    public int getAge() {
+        if (this.dob != null) {
+            LocalDate birthDay = this.dob.toInstant().atZone(ZoneId.systemDefault()).toLocalDate();
+            return Period.between(birthDay, LocalDate.now()).getYears(); }
+        return -1;
+    }
+
+    public String getAgeToString(){
+        return ("{ \"name\": " + this.name + " ," + "\"age\": " + this.getAge() + " }" );
+    }
+
+    public String getNationality(){
+        return nationality;
+    }
+
+    public String getNationalityToString(){
+        return ("{ \"name\": " + this.name + " ," + "\"nationality\": " + this.getNationality() + " }" );
     }
 
     public String getPlayerFact(){
@@ -98,15 +122,17 @@ public class Fact {
     }
 
     public String getPlayerFactToString(){
-        return ("{ \"player's name\": " + this.playerName + " ," + "\"Fact about player\": " + this.getPlayerFact() + " }" );
+        return ("{ \"name\": " + this.name + " ," + "\"playerFact\": " + this.getPlayerFact() + " }" );
     }
 
     public static void main(String[] args) {
-        // fact empty object
+        // Person empty object
         Fact p1 = new Fact();
 
         // using gregorian calendar to initialize tester date object
-        Fact p2 = new Fact("karthikv722@gmail.com", "karthikishim", "Mykhailo Mudryk", "Chelsea F.C.", "Mudryk has 88 pac on his base FIFA 23 card");
+        Date dob2 = new GregorianCalendar(2001, 0, 5).getTime();
+        Fact p2 = new Fact("karthikv722@gmail.com", "Mudryk signed for Chelsea in January 2023 for $109m", "Mykhailo Mudryk", dob2, 4, "Ukraine");
+        
         
         System.out.println(p1);
         System.out.println(p2);
