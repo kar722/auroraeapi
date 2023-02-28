@@ -20,7 +20,7 @@ import org.springframework.web.bind.annotation.RestController;
 
 @RestController // annotation to create a RESTful web services
 @RequestMapping("/api/nfl")  //prefix of API
-public class WomensWCController {
+public class WomenoWCController {
     private JSONObject body; //last run result
     private HttpStatus status; //last run status
     String last_run = null; //last run day of month
