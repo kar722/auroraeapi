@@ -85,7 +85,7 @@ public class Facto {
 
 
     // Constructor used when building object from an API
-    public Fact(String email, String playerFact, String name, Date dob, int teamsPlayedFor, String nationality) {
+    public Facto(String email, String playerFact, String name, Date dob, int teamsPlayedFor, String nationality) {
         this.email = email;
         this.playerFact = playerFact;
         this.name = name;
@@ -127,11 +127,11 @@ public class Facto {
 
     public static void main(String[] args) {
         // Person empty object
-        Fact p1 = new Fact();
+        Facto p1 = new Facto();
 
         // using gregorian calendar to initialize tester date object
         Date dob2 = new GregorianCalendar(2001, 0, 5).getTime();
-        Fact p2 = new Fact("karthikv722@gmail.com", "Mudryk signed for Chelsea in January 2023 for $109m", "Mykhailo Mudryk", dob2, 4, "Ukraine");
+        Facto p2 = new Facto("karthikv722@gmail.com", "Mudryk signed for Chelsea in January 2023 for $109m", "Mykhailo Mudryk", dob2, 4, "Ukraine");
         
         
         System.out.println(p1);

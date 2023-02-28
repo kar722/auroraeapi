@@ -17,7 +17,7 @@ import org.springframework.web.bind.annotation.RestController;
 
 @RestController // annotation to create a RESTful web services
 @RequestMapping("/api/epl")  //prefix of API
-public class EPLApiController {
+public class EPLAPI2Controller {
     private JSONObject body; //last run result
     private HttpStatus status; //last run status
     String last_run = null; //last run day of month
