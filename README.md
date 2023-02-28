@@ -1,5 +1,8 @@
-## TBD [Spring Portfolio Starter](https://nighthawkcodingsociety.com/projectsearch/details/Spring%20Portfolio%20Starter)
-Runtime link: TBD https://jportfolio.nighthawkcodingsociety.com/
+## Team Sports Backend
+Runtime link: https://kar722.github.io/TeamSportsFrontend/
+
+### Project Description
+TeamSports is _
 
 ## Team Members
 | Member  | Role  | Fastpages  | Spring Portfolio  |
@@ -7,29 +10,25 @@ Runtime link: TBD https://jportfolio.nighthawkcodingsociety.com/
 |Evan| Designer  | [Link](https://evanyang24.github.io/APCSA/)  | [Link]()  |
 |Karthik| Scrum Master   | [Link](https://github.com/kar722/fastpages/issues/4)  | [Link]()  |
 |Pranav| Technical Officer  | [Link](Fastpages)   |  [Link](https://github.com/PranavP04) |
-|Sanjay| Github Admin / Deployment  | [Link](https://sanjayb06.github.io/tri1fastpages/)  | [Link]()   |
+|Sanjay| Deployment / DevOps  | [Link](https://sanjayb06.github.io/tri1fastpages/)  | [Link]()   |
+|Jay| Github Admin  | [Link](https://jaymanjrekar.github.io/jaysfastpages/)  | [Link]()   |
 
+## Homepage
+<img src="https://user-images.githubusercontent.com/72475804/221731378-f7c9ddeb-c790-44b6-af2f-3883dba73779.png" height="600">
 
-## Visual thoughts
-#### * Starter code should be fun and practical
-#### * Organize with Bootstrap menu 
-#### * Add some color and fun through VANTA Visuals (birds, halo, solar, net)
-#### * Show some practical and fun links (hrefs) like Twitter, Git, Youtube
-#### * Show student project specific links (hrefs) per page
-#### * Show student TPT ideas
-#### * Show student About me pages
+### Quizzes and Games Using APIs
+#### [API Controller](https://github.com/kar722/TeamSports/blob/master/src/main/java/com/nighthawk/spring_portfolio/controllers/NFLApiController.java)
+<img src="https://user-images.githubusercontent.com/72475804/221731609-c267439d-9792-4288-82c0-bbfbe07f3bab.png" height="250">
 
+#### [API Controller](https://github.com/kar722/TeamSports/blob/master/src/main/java/com/nighthawk/spring_portfolio/controllers/EPLApiController.java)
+<img src="https://user-images.githubusercontent.com/72475804/221732948-22283e1c-bf81-4a00-be2e-bd014b40067e.png" height="250">
 
+#### [API Controller](https://github.com/kar722/TeamSports/blob/master/src/main/java/com/nighthawk/spring_portfolio/controllers/GuessPlayerController.java)
+<img src="https://user-images.githubusercontent.com/72475804/221733506-7c65fb88-45fa-4571-aa4f-23b8c3516865.png" height="250">
 
-## Getting started
-#### * Clone project to IntelliJ
-#### * Verify Project Structure to use a good Java JDK (adopt-openJ9-15) 
-#### * Play or entry point is Main.java, look for play option in tray.  This file eanbles Spring to load
-#### * Java source (src/main/java) had Java files.  Find "controllers" path, these files enable HTTP route and HTML file relationship.  Note, html 
-#### * HTML source (src/main/resources) had templates and supporting files.  Find index.html as this file is launched by defaul in Spring.  Other HTML files are loaded by building a "@Controller"
+## MVCs
+#### [MVC](https://github.com/kar722/TeamSports/tree/master/src/main/java/com/nighthawk/spring_portfolio/mvc/fact)
+<img src="https://user-images.githubusercontent.com/72475804/221734056-62fc6532-b313-4082-84ab-ac86b3a6d54d.png" height="500">
 
-
-
-## IDE management
-#### * A ".gitignore" can teach a Developer a lot about Java runtime.  A target directory is created when you press play button, byte code is generated and files are moved into this location.
-#### * A "pom.xml" file can teach you a lot about Java dependencies.  This is similar to "requirements.txt" file in Python.  It manages packages and dependencies.
+## Misc
+<img src="https://user-images.githubusercontent.com/72475804/221734205-1ec8a264-e383-4bd9-96db-ba184f2613f4.png" height="500">
