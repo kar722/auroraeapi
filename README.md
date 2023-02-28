@@ -2,7 +2,7 @@
 Runtime link: https://kar722.github.io/TeamSportsFrontend/
 
 ### Project Description
-TeamSports is _
+TeamSports is a very interactive sports page, designed by Karthik, Sanjay, Jay, Evan, and Pranav. In this website, the user will have access to serveral different sports features like quizzes, prediction models, and guessing games to interst people in all sports. Primarily, as of right now, the website features soccer as that is the theme in which this team si going for. However, even with the many features that exist within the website, they are still planning on impementing the JWT feature in order to use a login feature that will save user's results in the various models present within the website. 
 
 ## Team Members
 | Member  | Role  | Fastpages  | Spring Portfolio  |
