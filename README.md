@@ -1,6 +1,9 @@
 ## Team Sports Backend
 Runtime link: https://kar722.github.io/TeamSportsFrontend/
 
+### Project Description
+TeamSports is _
+
 ## Team Members
 | Member  | Role  | Fastpages  | Spring Portfolio  |
 |---|---|---|---|
