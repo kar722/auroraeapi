@@ -1,6 +1,6 @@
 package com.nighthawk.spring_portfolio.mvc.soccer;
 
-public class Team {
+public class Teamo {
     
     String name = "";
     String country = "";
