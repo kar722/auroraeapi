@@ -13,6 +13,7 @@ import org.json.simple.JSONArray;
 import org.json.simple.JSONObject;
 import org.json.simple.parser.JSONParser;
 import org.springframework.data.repository.query.Param;
+import org.springframework.http.HttpHeaders;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -40,7 +41,13 @@ public class ProductAPIController {
         JSONArray result = product.get_data();
         this.body = new JSONObject();
         this.body.put("data", result);
-        return new ResponseEntity<>(body,HttpStatus.OK);
+        HttpHeaders responseHeaders = new HttpHeaders();
+        responseHeaders.add("Access-Control-Allow-Origin", "*");
+        responseHeaders.add("Access-Control-Allow-Credentials", "true");
+        responseHeaders.add("Access-Control-Allow-Methods", "GET,POST,PUT,OPTIONS");
+        responseHeaders.add("Access-Control-Allow-Headers", "Origin, Content-Type, Accept");
+
+        return new ResponseEntity<>(body,responseHeaders,HttpStatus.OK);
     }
     
     @GetMapping("/getProducts")
@@ -49,7 +56,11 @@ public class ProductAPIController {
         JSONArray result = product.get_data();
         this.body = new JSONObject();
         this.body.put("data", result);
-        return new ResponseEntity<>(body,HttpStatus.OK);
+
+        HttpHeaders responseHeaders = new HttpHeaders();
+        responseHeaders.add("Access-Control-Allow-Origin", "*");
+    
+        return new ResponseEntity<>(body,responseHeaders,HttpStatus.OK);
     }
 
     @GetMapping("/getProducts/{id}")
