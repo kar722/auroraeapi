@@ -11,13 +11,13 @@ Extends the JpaRepository interface from Spring Data JPA.
 -- JpaRepository defines standard CRUD methods
 -- Via JPA the developer can retrieve database from relational databases to Java objects and vice versa.
  */
-public interface FactJpaRepository extends JpaRepository<Fact, Long> {
-    Fact findByEmail(String email);
+public interface FactJpaRepository extends JpaRepository<Facto, Long> {
+    Facto findByEmail(String email);
 
-    List<Fact> findAllByOrderByNameAsc();
+    List<Facto> findAllByOrderByNameAsc();
 
     // JPA query, findBy does JPA magic with "Name", "Containing", "Or", "Email", "IgnoreCase"
-    List<Fact> findByNameContainingIgnoreCaseOrEmailContainingIgnoreCase(String name, String email);
+    List<Facto> findByNameContainingIgnoreCaseOrEmailContainingIgnoreCase(String name, String email);
     /* Custom JPA query articles, there are articles that show custom SQL as well
        https://springframework.guru/spring-data-jpa-query/
        https://docs.spring.io/spring-data/jpa/docs/current/reference/html/#jpa.query-methods
@@ -27,7 +27,7 @@ public interface FactJpaRepository extends JpaRepository<Fact, Long> {
     @Query(
             value = "SELECT * FROM Fact f WHERE f.name LIKE ?1 or f.email LIKE ?1",
             nativeQuery = true)
-    List<Fact> findByLikeTermNative(String term);
+    List<Facto> findByLikeTermNative(String term);
     /*
         https://www.baeldung.com/spring-data-jpa-query
      */

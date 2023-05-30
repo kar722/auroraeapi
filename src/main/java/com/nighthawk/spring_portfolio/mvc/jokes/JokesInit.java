@@ -20,22 +20,22 @@ public class JokesInit {
 
             // starting jokes
             final String[] jokesArray = {
-                "Group B -- 1. Porto vs 2. Atletico",
-                "Group B -- 1. Leverkusen vs 2. Club Brugge",
-                "Group A -- 1. Liverpool vs 2. Napoli",
-                "Group A -- 1. Rangers vs 2. Ajax",
-                "Group C -- 1. Bayern vs 2. Inter",
-                "Group C -- 1. Plzeň vs 2. Barcelona",
-                "Group D -- 1. Sporting CP vs 2. Frankfurt",
-                "Group D -- 1. Marseille vs 2. Tottenham",
-                "Group F -- 1. Real Madrid vs 2. Celtic",
-                "Group F -- 1. Shakhtar vs 2. Leipzig",
-                "Group E -- 1. Chelsea vs 2. Dinamo Zagreb",
-                "Group E -- 1. Milan vs 2. Salzburg",
-                "Group G -- 1. Man City vs 2. Sevilla",
-                "Group G -- 1. Copenhagen vs 2. Dortmund",
-                "Group H -- 1. Juventus vs 2. Paris",
-                "Group H -- 1. M. Haifa vs 2. Benfica"
+                "Group B -- 1. Cornell vs 2. Syracuse",
+                "Group B -- 1. FIU vs 2. Duke",
+                "Group A -- 1. Pittsburg vs 2. Kentucky",
+                "Group A -- 1. Marshal vs 2. Indiana",
+                "Group C -- 1. Greensboro vs 2. Stanford",
+                "Group C -- 1. Creigh vs 2. St Louis",
+                "Group D -- 1. Denver vs 2. Akron",
+                "Group D -- 1. Virginia vs 2. Penn State",
+                "Group F -- 1. Clemson vs 2. UCLA",
+                "Group F -- 1. Michigan vs 2. Lipscomb",
+                "Group E -- 1. Ohio State vs 2. Florida",
+                "Group E -- 1. Georgia Town vs 2. Tulsa",
+                "Group G -- 1. Portland vs 2. Washington",
+                "Group G -- 1. Highpoint vs 2. Oregon State",
+                "Group H -- 1. SMU vs 2. UNH",
+                "Group H -- 1. USF vs 2. MD"
             };
 
             // make sure Joke database is populated with starting jokes

@@ -25,7 +25,7 @@ public class FactApiController {
     GET List of People
      */
     @GetMapping("/")
-    public ResponseEntity<List<Fact>> getPeople() {
+    public ResponseEntity<List<Facto>> getPeople() {
         return new ResponseEntity<>( repository.findAllByOrderByNameAsc(), HttpStatus.OK);
     }
 
@@ -33,10 +33,10 @@ public class FactApiController {
     GET individual Fact using ID
      */
     @GetMapping("/{id}")
-    public ResponseEntity<Fact> getFact(@PathVariable long id) {
-        Optional<Fact> optional = repository.findById(id);
+    public ResponseEntity<Facto> getFact(@PathVariable long id) {
+        Optional<Facto> optional = repository.findById(id);
         if (optional.isPresent()) {  // Good ID
-            Fact fact = optional.get();  // value from findByID
+            Facto   fact = optional.get();  // value from findByID
             return new ResponseEntity<>(fact, HttpStatus.OK);  // OK HTTP response: status code, headers, and body
         }
         // Bad ID
@@ -45,9 +45,9 @@ public class FactApiController {
 
     @GetMapping("/getnationality/{id}")
     public String getnationality(@PathVariable long id) {
-        Optional<Fact> optional = repository.findById(id);
+        Optional<Facto> optional = repository.findById(id);
         if (optional.isPresent()) {  // Good ID
-            Fact fact = optional.get();  // value from findByID
+            Facto fact = optional.get();  // value from findByID
             String nationalityToString = fact.getNationalityToString();
             return nationalityToString;
         }
@@ -57,9 +57,9 @@ public class FactApiController {
 
     @GetMapping("/getAge/{id}")
     public String getAge(@PathVariable long id) {
-        Optional<Fact> optional = repository.findById(id);
+        Optional<Facto> optional = repository.findById(id);
         if (optional.isPresent()) {  // Good ID
-            Fact fact = optional.get();  // value from findByID
+            Facto   fact = optional.get();  // value from findByID
             String ageToString = fact.getAgeToString();
             return ageToString;
         }
@@ -69,9 +69,9 @@ public class FactApiController {
 
     @GetMapping("/getPlayerFact/{id}")
     public String getPlayerFact(@PathVariable long id) {
-        Optional<Fact> optional = repository.findById(id);
+        Optional<Facto> optional = repository.findById(id);
         if (optional.isPresent()) {  // Good ID
-            Fact fact = optional.get();  // value from findByID
+            Facto fact = optional.get();  // value from findByID
             String ageToString = fact.getPlayerFactToString();
             return ageToString;
         }
@@ -83,10 +83,10 @@ public class FactApiController {
     DELETE individual Fact using ID
      */
     @DeleteMapping("/delete/{id}")
-    public ResponseEntity<Fact> deleteFact(@PathVariable long id) {
-        Optional<Fact> optional = repository.findById(id);
+    public ResponseEntity<Facto> deleteFact(@PathVariable long id) {
+        Optional<Facto> optional = repository.findById(id);
         if (optional.isPresent()) {  // Good ID
-            Fact fact = optional.get();  // value from findByID
+            Facto fact = optional.get();  // value from findByID
             repository.deleteById(id);  // value from findByID
             return new ResponseEntity<>(fact, HttpStatus.OK);  // OK HTTP response: status code, headers, and body
         }
@@ -111,7 +111,7 @@ public class FactApiController {
             return new ResponseEntity<>(dobString +" error; try MM-dd-yyyy", HttpStatus.BAD_REQUEST);
         }
         // A fact object WITHOUT ID will create a new record with default roles as student
-        Fact fact = new Fact(email, playerFact, name, dob, teamsPlayedFor, nationality);
+        Facto fact = new Facto(null, email, playerFact, name, dob, teamsPlayedFor, nationality, null);
         repository.save(fact);
         return new ResponseEntity<>(email +" is created successfully", HttpStatus.CREATED);
     }
@@ -125,7 +125,7 @@ public class FactApiController {
         String term = (String) map.get("term");
 
         // JPA query to filter on term
-        List<Fact> list = repository.findByNameContainingIgnoreCaseOrEmailContainingIgnoreCase(term, term);
+        List<Facto> list = repository.findByNameContainingIgnoreCaseOrEmailContainingIgnoreCase(term, term);
 
         // return resulting list and status, error checking should be added
         return new ResponseEntity<>(list, HttpStatus.OK);
@@ -135,12 +135,12 @@ public class FactApiController {
     The factStats API adds stats by Date to Fact table
     */
     @PostMapping(value = "/setStats", produces = MediaType.APPLICATION_JSON_VALUE)
-    public ResponseEntity<Fact> factStats(@RequestBody final Map<String,Object> stat_map) {
+    public ResponseEntity<Facto> factStats(@RequestBody final Map<String,Object> stat_map) {
         // find ID
         long id=Long.parseLong((String)stat_map.get("id"));
-        Optional<Fact> optional = repository.findById((id));
+        Optional<Facto> optional = repository.findById((id));
         if (optional.isPresent()) {  // Good ID
-            Fact fact = optional.get();  // value from findByID
+            Facto  fact = optional.get();  // value from findByID
             // Extract Attributes from JSON
             Map<String, Object> attributeMap = new HashMap<>();
             for (Map.Entry<String,Object> entry : stat_map.entrySet())  {
