@@ -36,16 +36,18 @@ public class ProductAPIController {
 
     @PostMapping("/add/{name}/{price}/{description}/{inStock}")
     public ResponseEntity<JSONObject> Add(@PathVariable String name,@PathVariable int price, @PathVariable String description, @PathVariable int inStock) throws Exception {
+        HttpHeaders responseHeaders = new HttpHeaders();
+        responseHeaders.add("Access-Control-Allow-Origin", "*");
+
         Product product = new Product();
         product.insert(name,price,description,inStock);
         JSONArray result = product.get_data();
         this.body = new JSONObject();
         this.body.put("data", result);
-        HttpHeaders responseHeaders = new HttpHeaders();
-        responseHeaders.add("Access-Control-Allow-Origin", "*");
-        responseHeaders.add("Access-Control-Allow-Credentials", "true");
-        responseHeaders.add("Access-Control-Allow-Methods", "GET,POST,PUT,OPTIONS");
-        responseHeaders.add("Access-Control-Allow-Headers", "Origin, Content-Type, Accept");
+
+        // responseHeaders.add("Access-Control-Allow-Credentials", "true");
+        // responseHeaders.add("Access-Control-Allow-Methods", "GET,POST,PUT,OPTIONS");
+        // responseHeaders.add("Access-Control-Allow-Headers", "Origin, Content-Type, Accept");
 
         return new ResponseEntity<>(body,responseHeaders,HttpStatus.OK);
     }
