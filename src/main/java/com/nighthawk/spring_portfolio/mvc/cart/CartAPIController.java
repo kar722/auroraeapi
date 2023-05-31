@@ -12,6 +12,7 @@ import org.json.simple.JSONArray;
 import org.json.simple.JSONObject;
 import org.json.simple.parser.JSONParser;
 import org.springframework.data.repository.query.Param;
+import org.springframework.http.HttpHeaders;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -37,7 +38,10 @@ public class CartAPIController {
         JSONArray result = cart.get_data(uid);
         this.body = new JSONObject();
         this.body.put("data", result);
-        return new ResponseEntity<>(body,HttpStatus.OK);
+        HttpHeaders responseHeaders = new HttpHeaders();
+        responseHeaders.add("Access-Control-Allow-Origin", "*");
+
+        return new ResponseEntity<>(body,responseHeaders,HttpStatus.OK);
     }
     @GetMapping("/getCart")
     public ResponseEntity<JSONObject> getCart() {
@@ -45,7 +49,10 @@ public class CartAPIController {
         JSONArray result = cart.get_data();
         this.body = new JSONObject();
         this.body.put("data", result);
-        return new ResponseEntity<>(body,HttpStatus.OK);
+        HttpHeaders responseHeaders = new HttpHeaders();
+        responseHeaders.add("Access-Control-Allow-Origin", "*");
+
+        return new ResponseEntity<>(body,responseHeaders,HttpStatus.OK);
     }
 
     @PostMapping("/addItem/{item}/{user}/{quantity}/{uid}")
@@ -55,7 +62,10 @@ public class CartAPIController {
         JSONArray result = cart.get_data();
         this.body = new JSONObject();
         this.body.put("data", result);
-        return new ResponseEntity<>(body,HttpStatus.OK);
+        HttpHeaders responseHeaders = new HttpHeaders();
+        responseHeaders.add("Access-Control-Allow-Origin", "*");
+
+        return new ResponseEntity<>(body,responseHeaders,HttpStatus.OK);
     }
 
     @PutMapping("/delete/{id}")
