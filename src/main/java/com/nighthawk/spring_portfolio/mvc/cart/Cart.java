@@ -64,21 +64,22 @@ public class Cart {
          JSONArray result = new JSONArray(); //stack overflow
          while (rs.next()) {
              JSONObject row = new JSONObject();
+             int id = (int) (rs.getObject("ITEM"));
+             System.out.println(id);
              colNames.forEach(cn -> {
                  try {
                      row.put(cn, rs.getObject(cn));
+            
                  } catch (Exception e) {
                      ((Throwable) e).printStackTrace();
                  }
              });
+             Product product = new Product();
+             JSONArray thisProd = product.get_data(id);
+             row.put("product",thisProd);
              result.add(row);
              // return result;
          }
-         Product product = new Product();
-         JSONArray thisProd = product.get_data(2);
-         JSONObject row = new JSONObject();
-         row.put("product",thisProd);
-         result.add(row);
          rs.close();
          stmt.close();
          
