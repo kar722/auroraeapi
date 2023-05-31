@@ -1,12 +1,11 @@
 package com.nighthawk.spring_portfolio.mvc.cart;
-
 import java.sql.*;
 import java.util.List;
 import java.util.stream.Collectors;
 import java.util.stream.IntStream;
 import org.json.simple.JSONArray;
 import org.json.simple.JSONObject;
-
+import com.nighthawk.spring_portfolio.mvc.products.Product;
 
 public class Cart {
    
@@ -75,10 +74,17 @@ public class Cart {
              result.add(row);
              // return result;
          }
- 
-            rs.close();
-            stmt.close();
-            c.close();
+         Product product = new Product();
+         JSONArray thisProd = product.get_data(2);
+         JSONObject row = new JSONObject();
+         row.put("product",thisProd);
+         result.add(row);
+         rs.close();
+         stmt.close();
+         
+
+      
+         c.close();
          return result;
  
       } catch ( Exception e ) {
@@ -192,11 +198,9 @@ public class Cart {
   
 
     public static void main( String args[] ) {
-      // Cart cart = new Cart();
-      Connection c = null;
-      Statement stmt = null;
+      Cart cart = new Cart();
 
-      // System.out.println(cart.get_data());
+      System.out.println(cart.get_data());
     }
  }
 //  "CREATE TABLE CART " +
