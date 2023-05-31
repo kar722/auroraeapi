@@ -1,6 +1,7 @@
 package com.nighthawk.spring_portfolio.mvc.contact;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.HttpHeaders;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.MediaType;
 import org.springframework.http.ResponseEntity;
@@ -25,7 +26,9 @@ public class ContactApiController {
      */
     @GetMapping("/")
     public ResponseEntity<List<Contact>> getContacts() {
-        return new ResponseEntity<>( repository.findAllByOrderByNameAsc(), HttpStatus.OK);
+        HttpHeaders responseHeaders = new HttpHeaders();
+        responseHeaders.add("Access-Control-Allow-Origin", "*");
+        return new ResponseEntity<>( repository.findAllByOrderByNameAsc(),responseHeaders, HttpStatus.OK);
     }
 
     /*
@@ -45,6 +48,8 @@ public class ContactApiController {
     @GetMapping("/getMessage/{id}")
     public String getMessage(@PathVariable long id) {
         Optional<Contact> optional = repository.findById(id);
+        HttpHeaders responseHeaders = new HttpHeaders();
+        responseHeaders.add("Access-Control-Allow-Origin", "*");
         if (optional.isPresent()) {  // Good ID
             Contact contact = optional.get();  // value from findByID
             String messageToString = contact.getMessageToString();
@@ -57,6 +62,8 @@ public class ContactApiController {
     @GetMapping("/getCompany/{id}")
     public String getCompany(@PathVariable long id) {
         Optional<Contact> optional = repository.findById(id);
+        HttpHeaders responseHeaders = new HttpHeaders();
+        responseHeaders.add("Access-Control-Allow-Origin", "*");
         if (optional.isPresent()) {  // Good ID
             Contact contact = optional.get();  // value from findByID
             String companyToString = contact.getCompanyToString();
@@ -72,6 +79,8 @@ public class ContactApiController {
     @DeleteMapping("/delete/{id}")
     public ResponseEntity<Contact> deleteContact(@PathVariable long id) {
         Optional<Contact> optional = repository.findById(id);
+        HttpHeaders responseHeaders = new HttpHeaders();
+        responseHeaders.add("Access-Control-Allow-Origin", "*");
         if (optional.isPresent()) {  // Good ID
             Contact contact = optional.get();  // value from findByID
             repository.deleteById(id);  // value from findByID
