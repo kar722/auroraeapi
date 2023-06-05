@@ -204,8 +204,21 @@ public class Product {
    }
 
    public static void main( String args[] ) {
-      Product product = new Product();
-      System.out.println(product.get_data(2));
+      // Connection c = null;
+      // Statement stmt = null;
+      // Class.forName("org.sqlite.JDBC");
+      // c = DriverManager.getConnection("jdbc:sqlite:products.db");
+      // c.setAutoCommit(false);
+      // stmt = c.createStatement();
+      // String sql =String.format("UPDATE PRODUCT set IMAGE = 'https://i0.wp.com/images-prod.healthline.com/hlcmsresource/images/News/070116_stemcelltourism_THUMB_LARGE.jpg?w=1155&h=1528' where ID=5;");
+      // stmt.executeUpdate(sql);
+
+      // stmt.close();
+      // c.commit();
+      // c.close();
+      System.out.println("test");
+
+
    }
 }
 
