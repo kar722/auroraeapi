@@ -48,8 +48,6 @@ public class ContactApiController {
     @GetMapping("/getMessage/{id}")
     public String getMessage(@PathVariable long id) {
         Optional<Contact> optional = repository.findById(id);
-        HttpHeaders responseHeaders = new HttpHeaders();
-        responseHeaders.add("Access-Control-Allow-Origin", "*");
         if (optional.isPresent()) {  // Good ID
             Contact contact = optional.get();  // value from findByID
             String messageToString = contact.getMessageToString();
@@ -79,8 +77,6 @@ public class ContactApiController {
     @DeleteMapping("/delete/{id}")
     public ResponseEntity<Contact> deleteContact(@PathVariable long id) {
         Optional<Contact> optional = repository.findById(id);
-        HttpHeaders responseHeaders = new HttpHeaders();
-        responseHeaders.add("Access-Control-Allow-Origin", "*");
         if (optional.isPresent()) {  // Good ID
             Contact contact = optional.get();  // value from findByID
             repository.deleteById(id);  // value from findByID

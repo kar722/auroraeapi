@@ -76,7 +76,10 @@ public class CartAPIController {
         JSONArray result = cart.get_data();
         this.body = new JSONObject();
         this.body.put("data", result);
-        return new ResponseEntity<>(body,HttpStatus.OK);
+        HttpHeaders responseHeaders = new HttpHeaders();
+        responseHeaders.add("Access-Control-Allow-Origin", "*");
+
+        return new ResponseEntity<>(body,responseHeaders,HttpStatus.OK);
 
     }
 
